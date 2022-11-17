@@ -1,0 +1,12 @@
+[user]
+	name = Nikita Nazarov
+[core]
+	autocrlf = input
+[pull]
+	rebase = true
+[alias]
+	cp = cherry-pick
+	s = status
+	co = checkout
+	br = branch
+
