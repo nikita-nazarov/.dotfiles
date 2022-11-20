@@ -1,7 +1,64 @@
-source ~/.vim/.vim.plug
+" =============================================================================
+" Plugin Manager Setup
+" =============================================================================
+"
+
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
+
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
+
+
+" Create a horizontal split at the bottom when installing plugins
+let g:plug_window = 'vertical topleft new'
+
+let g:plug_dir = expand('~/.vim/bundle')
+call plug#begin(g:plug_dir)
+
+Plug 'udalov/kotlin-vim'
+	
+" Themes
+Plug 'doums/darcula'
+	
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+
+Plug 'FooSoft/vim-argwrap'
+
+" For snippets
+Plug 'garbas/vim-snipmate' 
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'honza/vim-snippets'
+Plug 'preservim/nerdtree'
+
+Plug 'tpope/vim-fugitive'
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+call plug#end()   "required
+
+" Snipmate settings
+let g:snipMate = { 'snippet_version' : 1 }
+
+let g:dracula_italic = 0 
+
+let NERDTreeShowHidden=1
+
+set diffopt+=vertical
 
 :imap <C-j> <Plug>snipMateNextOrTrigger
 :smap <C-j> <Plug>snipMateNextOrTrigger
+
+"""""""""""""""""""""""
+""" GENERAL SETTINGS ""
+"""""""""""""""""""""""
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
