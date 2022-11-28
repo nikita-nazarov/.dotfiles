@@ -1,5 +1,6 @@
 [user]
 	name = Nikita Nazarov
+	email = nikitanazarov@google.com
 [core]
 	autocrlf = input
 [pull]
