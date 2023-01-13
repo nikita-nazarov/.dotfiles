@@ -25,7 +25,8 @@ Plug 'udalov/kotlin-vim'
 	
 " Themes
 Plug 'doums/darcula'
-	
+Plug 'ayu-theme/ayu-vim'
+
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
@@ -90,7 +91,9 @@ set nu relativenumber
 " Set g to default when replacing with :s
 :set gdefault
 
-colorscheme darcula
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu
 
 " Change cursor when switching modes
 :autocmd InsertEnter,InsertLeave * set cul!
@@ -140,4 +143,9 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
+
+function! DwarfDump()
+	let name=exe ":echo expand('%:p')"
+	enew | r! dwarfdump name
+endfunction
 
