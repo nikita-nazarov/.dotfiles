@@ -22,10 +22,6 @@ let g:plug_dir = expand('~/.vim/bundle')
 call plug#begin(g:plug_dir)
 
 Plug 'udalov/kotlin-vim'
-	
-" Themes
-Plug 'doums/darcula'
-Plug 'ayu-theme/ayu-vim'
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -91,9 +87,7 @@ set nu relativenumber
 " Set g to default when replacing with :s
 :set gdefault
 
-set termguicolors
-let ayucolor="dark"
-colorscheme ayu
+colorscheme slate
 
 " Change cursor when switching modes
 :autocmd InsertEnter,InsertLeave * set cul!
@@ -144,8 +138,18 @@ set softtabstop=4
 set shiftwidth=4
 set noexpandtab
 
-function! DwarfDump()
-	let name=exe ":echo expand('%:p')"
-	enew | r! dwarfdump name
+function! DisplayColorSchemes()
+   let currDir = getcwd()
+   exec "cd $VIMRUNTIME/colors"
+   for myCol in split(glob("*"), '\n')
+      if myCol =~ '\.vim'
+         let mycol = substitute(myCol, '\.vim', '', '')
+         exec "colorscheme " . mycol
+         exec "redraw!"
+         echo "colorscheme = ". myCol
+         sleep 2
+      endif
+   endfor
+   exec "cd " . currDir
 endfunction
 

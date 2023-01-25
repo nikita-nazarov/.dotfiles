@@ -1,6 +1,6 @@
 username() {
    # echo "%{$FG[085]%}%n%{$reset_color%}"
-   echo "%F{085}%b%n%f%b"
+   echo "%F{045}%b%n%f%b"
 }
 
 # current directory, two levels deep
