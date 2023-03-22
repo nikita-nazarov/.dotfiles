@@ -21,6 +21,12 @@ let g:plug_window = 'vertical topleft new'
 let g:plug_dir = expand('~/.vim/bundle')
 call plug#begin(g:plug_dir)
 
+Plug 'projekt0n/github-nvim-theme', { 'tag': 'v0.0.7' }
+Plug 'Shatur/neovim-ayu'
+Plug 'EdenEast/nightfox.nvim'
+Plug 'vim-scripts/proton'
+Plug 'doums/darcula'
+
 Plug 'udalov/kotlin-vim'
 
 Plug 'junegunn/fzf'
@@ -137,6 +143,8 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
+
+set cursorline 
 
 function! DisplayColorSchemes()
    let currDir = getcwd()
