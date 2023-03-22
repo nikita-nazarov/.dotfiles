@@ -3,6 +3,7 @@
 	email = nikitanazarov@google.com
 [core]
 	autocrlf = input
+	editor = "vim"
 [pull]
 	rebase = true
 [alias]
@@ -11,3 +12,5 @@
 	co = checkout
 	br = branch
 
+[color]
+	ui = auto
