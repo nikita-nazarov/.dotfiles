@@ -12,3 +12,5 @@ find .config/ -print0 | while IFS= read -r -d '' file
 do 
 	ln -s -f $wd/$file ~/$file
 done
+
+ln -s -f ~/.vim/autoload ~/.config/nvim/autoload
