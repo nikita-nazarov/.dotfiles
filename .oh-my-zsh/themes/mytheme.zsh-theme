@@ -38,3 +38,5 @@ build_theme() {
 PROMPT="$(build_theme)"
 RPROMPT='$(current_time)'
 
+
+

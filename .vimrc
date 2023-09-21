@@ -1,4 +1,4 @@
-" =============================================================================
+" ============================================================================d
 " Plugin Manager Setup
 " =============================================================================
 "
@@ -21,7 +21,8 @@ let g:plug_window = 'vertical topleft new'
 let g:plug_dir = expand('~/.vim/bundle')
 call plug#begin(g:plug_dir)
 
-Plug 'projekt0n/github-nvim-theme', { 'tag': 'v0.0.7' }
+Plug 'ku1ik/vim-monokai'
+Plug 'projekt0n/github-nvim-theme'
 Plug 'Shatur/neovim-ayu'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'vim-scripts/proton'
@@ -88,12 +89,12 @@ nnoremap <SPACE> <Nop>
 let mapleader=" "
 
 " Set relative line numbers
-set nu relativenumber
+" set nu relativenumber
 
 " Set g to default when replacing with :s
 :set gdefault
 
-colorscheme slate
+" colorscheme slate
 
 " Change cursor when switching modes
 :autocmd InsertEnter,InsertLeave * set cul!
@@ -117,7 +118,7 @@ nnoremap <C-h> <c-w>h
 nnoremap <C-l> <c-w>l
 
 " NERDTree settings
-nnoremap <leader>n :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeToggle %<CR>
 
 " ArgWrap mapping
 nnoremap <silent> <leader>a :ArgWrap<CR>

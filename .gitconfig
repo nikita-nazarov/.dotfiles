@@ -14,3 +14,11 @@
 
 [color]
 	ui = auto
+[http]
+	cookiefile = /Users/nikitanazarov/.gitcookies
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false
