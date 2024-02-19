@@ -2,7 +2,6 @@
 # Aliases
 #
 alias vimrc="vim ~/.vimrc"
-alias vim=nvim
 alias nvimrc="nvim ~/.config/nvim/init.lua"
 alias bashprof="vim ~/.bash_profile && source ~/.bash_profile"
 alias tmuxconf="vim ~/.tmux.conf && tmux source-file ~/.tmux.conf"
