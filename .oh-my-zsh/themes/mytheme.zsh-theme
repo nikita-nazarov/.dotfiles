@@ -1,6 +1,14 @@
 username() {
-   # echo "%{$FG[085]%}%n%{$reset_color%}"
-   echo "%F{085}%b%n%f%b"
+  local host_color="085"
+  if [ -n "$SSH_CLIENT" ]; then
+    local host_color="198"
+  fi
+
+   # echo "%F{045}%b%n%f%b"
+   # echo "%F{198}%b%n%f%b"
+   # echo "%F{085}%b%n%f%b"
+   echo "%F{$host_color}%b%n%f%b"
+   # echo "%F{007}%b%n%f%b"
 }
 
 # current directory, two levels deep
@@ -25,12 +33,21 @@ ZSH_THEME_GIT_PROMPT_SUFFIX=")"
 ZSH_THEME_GIT_PROMPT_DIRTY="*"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
-UP_CORNER='╭─'
-DOWN_CORNER='╰─'
+UP_CORNER="╭─"
+DOWN_CORNER="╰─"
+RIGHT_ARROW='❯'
+
+RPROMPT='${return_status}%{$reset_color%}'
+
+
+#build_theme() {
+#  echo "${UP_CORNER} %B$(username) [$(directory)]" 
+#  echo "${DOWN_CORNER}$ "
+#}
 
 build_theme() {
-  echo "${UP_CORNER} %B$(username) [$(directory)]" 
-  echo "${DOWN_CORNER}$ "
+  echo "$(username)%{$reset_color%} $(directory)"
+  echo "%{$fg_bold[magenta]%}${RIGHT_ARROW}%{$reset_color%} "
 }
 
 # putting it all together	
