@@ -1,5 +1,5 @@
 username() {
-  local host_color="085"
+  local host_color="084"
   if [ -n "$SSH_CLIENT" ]; then
     local host_color="198"
   fi
@@ -47,7 +47,7 @@ RPROMPT='${return_status}%{$reset_color%}'
 
 build_theme() {
   echo "$(username)%{$reset_color%} $(directory)"
-  echo "%{$fg_bold[magenta]%}${RIGHT_ARROW}%{$reset_color%} "
+  echo "${RIGHT_ARROW}%{$reset_color%} "
 }
 
 # putting it all together	
