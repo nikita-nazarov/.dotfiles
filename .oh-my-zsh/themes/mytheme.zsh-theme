@@ -1,7 +1,7 @@
 username() {
   local host_color="084"
   if [ -n "$SSH_CLIENT" ]; then
-    local host_color="198"
+    local host_color="081"
   fi
 
    # echo "%F{045}%b%n%f%b"
