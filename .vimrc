@@ -147,6 +147,8 @@ set noexpandtab
 
 set cursorline 
 
+set termguicolors
+
 function! DisplayColorSchemes()
    let currDir = getcwd()
    exec "cd $VIMRUNTIME/colors"
