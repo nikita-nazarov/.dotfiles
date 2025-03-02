@@ -21,16 +21,26 @@ let g:plug_window = 'vertical topleft new'
 let g:plug_dir = expand('~/.vim/bundle')
 call plug#begin(g:plug_dir)
 
-Plug 'ku1ik/vim-monokai'
+Plug 'shaunsingh/nord.nvim'
+Plug 'ericbn/vim-solarized'
+Plug 'alvan/vim-closetag'
+Plug 'loctvl842/monokai-pro.nvim'
+Plug 'felipeagc/fleet-theme-nvim'
 Plug 'projekt0n/github-nvim-theme'
 Plug 'Shatur/neovim-ayu'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'vim-scripts/proton'
 Plug 'doums/darcula'
+Plug 'askfiy/visual_studio_code'
+Plug 'folke/tokyonight.nvim'
+Plug 'kaicataldo/material.vim'
+Plug 'andreypopp/vim-colors-plain'
+Plug 'ntk148v/vim-horizon'
+Plug 'lifepillar/vim-gruvbox8'
 
 Plug 'udalov/kotlin-vim'
 
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 Plug 'FooSoft/vim-argwrap'
@@ -82,7 +92,9 @@ augroup vimrcEx
 augroup END
 
 " Enable syntax highlighting
-syntax on
+syntax enable
+set background=dark
+set termguicolors
 
 " Remap leader to space
 nnoremap <SPACE> <Nop>
@@ -94,7 +106,6 @@ let mapleader=" "
 " Set g to default when replacing with :s
 :set gdefault
 
-" colorscheme slate
 
 " Change cursor when switching modes
 :autocmd InsertEnter,InsertLeave * set cul!
@@ -144,23 +155,9 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
+set nu
 
 set cursorline 
 
 set termguicolors
-
-function! DisplayColorSchemes()
-   let currDir = getcwd()
-   exec "cd $VIMRUNTIME/colors"
-   for myCol in split(glob("*"), '\n')
-      if myCol =~ '\.vim'
-         let mycol = substitute(myCol, '\.vim', '', '')
-         exec "colorscheme " . mycol
-         exec "redraw!"
-         echo "colorscheme = ". myCol
-         sleep 2
-      endif
-   endfor
-   exec "cd " . currDir
-endfunction
 
