@@ -26,8 +26,6 @@ Plug 'udalov/kotlin-vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
-Plug 'FooSoft/vim-argwrap'
-
 Plug 'preservim/nerdtree'
 
 call plug#end()   "required
@@ -95,9 +93,6 @@ nnoremap <C-l> <c-w>l
 
 " NERDTree settings
 nnoremap <leader>n :NERDTreeToggle %<CR>
-
-" ArgWrap mapping
-nnoremap <silent> <leader>a :ArgWrap<CR>
 
 " Paste in the end of line mapping
 :nmap , $p
