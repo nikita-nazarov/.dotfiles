@@ -21,54 +21,25 @@ let g:plug_window = 'vertical topleft new'
 let g:plug_dir = expand('~/.vim/bundle')
 call plug#begin(g:plug_dir)
 
-Plug 'shaunsingh/nord.nvim'
-Plug 'ericbn/vim-solarized'
-Plug 'alvan/vim-closetag'
-Plug 'loctvl842/monokai-pro.nvim'
-Plug 'felipeagc/fleet-theme-nvim'
-Plug 'projekt0n/github-nvim-theme'
-Plug 'Shatur/neovim-ayu'
-Plug 'EdenEast/nightfox.nvim'
-Plug 'vim-scripts/proton'
-Plug 'doums/darcula'
-Plug 'askfiy/visual_studio_code'
-Plug 'folke/tokyonight.nvim'
-Plug 'kaicataldo/material.vim'
-Plug 'andreypopp/vim-colors-plain'
-Plug 'ntk148v/vim-horizon'
-Plug 'lifepillar/vim-gruvbox8'
-
 Plug 'udalov/kotlin-vim'
 
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 Plug 'FooSoft/vim-argwrap'
 
-" For snippets
-Plug 'garbas/vim-snipmate' 
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'honza/vim-snippets'
 Plug 'preservim/nerdtree'
-
-Plug 'tpope/vim-fugitive'
-
-Plug 'dracula/vim', { 'as': 'dracula' }
 
 call plug#end()   "required
 
 " Snipmate settings
 let g:snipMate = { 'snippet_version' : 1 }
 
-let g:dracula_italic = 0 
+let g:dracula_italic = 0
 
 let NERDTreeShowHidden=1
 
 set diffopt+=vertical
-
-:imap <C-j> <Plug>snipMateNextOrTrigger
-:smap <C-j> <Plug>snipMateNextOrTrigger
 
 """""""""""""""""""""""
 """ GENERAL SETTINGS ""
@@ -92,9 +63,7 @@ augroup vimrcEx
 augroup END
 
 " Enable syntax highlighting
-syntax enable
-set background=dark
-set termguicolors
+syntax on
 
 " Remap leader to space
 nnoremap <SPACE> <Nop>
@@ -105,7 +74,6 @@ let mapleader=" "
 
 " Set g to default when replacing with :s
 :set gdefault
-
 
 " Change cursor when switching modes
 :autocmd InsertEnter,InsertLeave * set cul!
@@ -118,9 +86,6 @@ nnoremap L gt
 nnoremap <leader>p :Files<CR>
 nnoremap <leader>o :Buffers<CR>
 nnoremap <leader>f :Ag<CR>
-
-" Fast 3-way merge
-nnoremap <leader>g :Gdiffsplit!<CR>
 
 " Easy buffer switching
 nnoremap <C-j> <c-w>j
@@ -138,8 +103,7 @@ nnoremap <silent> <leader>a :ArgWrap<CR>
 :nmap , $p
 
 " Split everything below
-set splitbelow
-"set termwinsize=10x0
+"set splitbelow
 
 " Directory for swap files
 set directory=~/.vim/tmp/
@@ -147,17 +111,16 @@ set backupdir=~/.vim/tmp/
 set undodir=~/.vim/tmp/
 
 " Dynamically move text
+
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-
 " Tabs
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
-set nu
 
-set cursorline 
+set cursorline
 
 set termguicolors
 
