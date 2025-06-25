@@ -20,8 +20,11 @@ let g:plug_window = 'vertical topleft new'
 
 let g:plug_dir = expand('~/.vim/bundle')
 call plug#begin(g:plug_dir)
+Plug 'nocksock/nazgul-vim'
 
 Plug 'udalov/kotlin-vim'
+
+Plug 'preservim/nerdcommenter'
 
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -118,4 +121,6 @@ set noexpandtab
 set cursorline
 
 set termguicolors
+
+colorscheme nazgul
 
