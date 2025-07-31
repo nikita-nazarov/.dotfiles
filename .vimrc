@@ -20,7 +20,7 @@ let g:plug_window = 'vertical topleft new'
 
 let g:plug_dir = expand('~/.vim/bundle')
 call plug#begin(g:plug_dir)
-Plug 'nocksock/nazgul-vim'
+Plug 'ayu-theme/ayu-vim'
 
 Plug 'udalov/kotlin-vim'
 
@@ -122,5 +122,5 @@ set cursorline
 
 set termguicolors
 
-colorscheme nazgul
+colorscheme ayu
 
