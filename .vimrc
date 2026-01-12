@@ -120,7 +120,11 @@ set noexpandtab
 
 set cursorline
 
-set termguicolors
+if has('termguicolors') && ($COLORTERM ==# 'truecolor' || $COLORTERM ==# '24bit')
+  set termguicolors
+else
+  syntax off
+endif
 
 colorscheme ayu
 
