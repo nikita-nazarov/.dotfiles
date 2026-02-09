@@ -11,6 +11,7 @@
 	s = status
 	co = checkout
 	br = branch
+    cane = commit --amend --no-edit
 
 [color]
 	ui = auto
