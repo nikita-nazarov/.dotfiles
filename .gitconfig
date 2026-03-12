@@ -4,6 +4,7 @@
 [core]
 	autocrlf = input
 	editor = "vim"
+	hooksPath = /Users/nikita.nazarov/.databricks/githooks
 [pull]
 	rebase = true
 [alias]
