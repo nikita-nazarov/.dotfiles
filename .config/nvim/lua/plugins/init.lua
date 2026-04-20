@@ -6,6 +6,25 @@ return {
   },
 
   -- Colorschemes
+  { "projekt0n/github-nvim-theme" },
+  {
+    "loctvl842/monokai-pro.nvim",
+    config = function()
+      require("monokai-pro").setup({
+        styles = {
+          comment = { italic = false },
+          keyword = { italic = false },
+          type = { italic = false },
+          storageclass = { italic = false },
+          structure = { italic = false },
+          parameter = { italic = false },
+          annotation = { italic = false },
+          tag_attribute = { italic = false },
+        },
+      })
+    end,
+  },
+
   {
     "rose-pine/neovim",
     name = "rose-pine",
@@ -25,6 +44,9 @@ return {
       })
     end,
   },
+
+  "nickkadutskyi/jb.nvim",
+  "uhs-robert/oasis.nvim",
 
   -- Treesitter (master branch = old stable, uses pre-compiled parsers, no tree-sitter-cli needed)
   {
