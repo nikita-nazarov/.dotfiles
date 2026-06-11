@@ -4,7 +4,8 @@
 [core]
 	autocrlf = input
 	editor = "vim"
-	hooksPath = /Users/nikita.nazarov/.databricks/githooks
+	hooksPath = /home/nikita.nazarov/.databricks/githooks
+	trustctime = false
 [pull]
 	rebase = true
 [alias]
@@ -12,7 +13,9 @@
 	s = status
 	co = checkout
 	br = branch
-    cane = commit --amend --no-edit
+	cane = commit --amend --no-edit
+	masterify = "!git stash && git fetch databricks master && git rebase databricks/master && git stash pop"
+	pp = "!bash -c \"new_args=(); remote=\\\"\\\"; ref=\\\"\\\"; start=0; if [[ \\$0 == \\\"bash\\\" ]]; then start=1; fi; for ((i=start; i<=\\$#; i++)); do arg=\\${!i}; if [[ \\\"\\$arg\\\" != -* ]]; then if [[ \\\"\\$remote\\\" == \\\"\\\" ]]; then remote=\\\"\\$arg\\\"; new_args+=(\\\"\\$arg\\\"); else if [[ \\$ref == \\\"\\\" ]]; then ref=\\\"\\$arg\\\"; fi; if [[ \\\"\\$ref\\\" != nikita-nazarov_data/* && \\\"\\$ref\\\" != isaac/* ]]; then new_args+=(\\\"\\$arg:nikita-nazarov_data/\\$arg\\\"); else new_args+=(\\\"\\$arg\\\"); fi; fi; else new_args+=(\\\"\\$arg\\\"); fi; done; if [[ \\$remote == \\\"\\\" ]]; then new_args+=(\\\"origin\\\"); fi; if [[ \\$ref == \\\"\\\" ]]; then branch=\\$(git branch --show-current); if [[ \\\"\\$branch\\\" != nikita-nazarov_data/* && \\\"\\$branch\\\" != isaac/* ]]; then new_args+=(\\\"\\$branch:nikita-nazarov_data/\\$branch\\\"); else new_args+=(\\\"\\$branch\\\"); fi; fi; git push -u \\\"\\${new_args[@]}\\\"\" "
 
 [color]
 	ui = auto
@@ -26,3 +29,10 @@
 	prompt = false
 [pager]
     branch = false
+[github]
+	username = nikita-nazarov_data
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = !/usr/bin/gh auth git-credential

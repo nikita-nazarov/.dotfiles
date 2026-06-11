@@ -102,5 +102,13 @@ source ~/.bash_profile
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # Set PATH, MANPATH, etc., for Homebrew.
 
-PROMPT="%2~
-%F{084}❯ %{$reset_color%}"
+PROMPT="%2~ %F{33}$ %{$reset_color%}"
+
+source /home/nikita.nazarov/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+sudo env DATABRICKS_ALLOW_INSTALL=1 snap install --classic nvim
+

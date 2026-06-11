@@ -20,7 +20,7 @@ let g:plug_window = 'vertical topleft new'
 
 let g:plug_dir = expand('~/.vim/bundle')
 call plug#begin(g:plug_dir)
-Plug 'ayu-theme/ayu-vim'
+Plug 'altercation/vim-colors-solarized'
 
 Plug 'udalov/kotlin-vim'
 
@@ -32,11 +32,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 
 call plug#end()   "required
-
-" Snipmate settings
-let g:snipMate = { 'snippet_version' : 1 }
-
-let g:dracula_italic = 0
 
 let NERDTreeShowHidden=1
 
@@ -79,10 +74,6 @@ let mapleader=" "
 " Change cursor when switching modes
 :autocmd InsertEnter,InsertLeave * set cul!
 
-" Easy tab switching
-nnoremap H gT
-nnoremap L gt
-
 " Find files and buffers with fzf
 nnoremap <leader>p :Files<CR>
 nnoremap <leader>o :Buffers<CR>
@@ -100,18 +91,11 @@ nnoremap <leader>n :NERDTreeToggle %<CR>
 " Paste in the end of line mapping
 :nmap , $p
 
-" Split everything below
-"set splitbelow
-
 " Directory for swap files
 set directory=~/.vim/tmp/
 set backupdir=~/.vim/tmp/
 set undodir=~/.vim/tmp/
 
-" Dynamically move text
-
-vnoremap J :m '>+1<CR>gv=gv
-vnoremap K :m '<-2<CR>gv=gv
 " Tabs
 set tabstop=4
 set softtabstop=4
@@ -120,11 +104,6 @@ set noexpandtab
 
 set cursorline
 
-if has('termguicolors') && ($COLORTERM ==# 'truecolor' || $COLORTERM ==# '24bit')
-  set termguicolors
-else
-  syntax off
-endif
+set termguicolors
 
-colorscheme ayu
-
+colo solarized
