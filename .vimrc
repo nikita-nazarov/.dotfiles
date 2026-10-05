@@ -20,8 +20,6 @@ let g:plug_window = 'vertical topleft new'
 
 let g:plug_dir = expand('~/.vim/bundle')
 call plug#begin(g:plug_dir)
-Plug 'lifepillar/vim-solarized8'
-
 Plug 'udalov/kotlin-vim'
 
 Plug 'preservim/nerdcommenter'
@@ -105,8 +103,6 @@ set noexpandtab
 set cursorline
 
 set termguicolors
-
-colo solarized8
 
 " Enable loading project-specific .vimrc files
 set exrc

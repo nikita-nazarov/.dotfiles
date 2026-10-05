@@ -1,6 +1,8 @@
 #!/bin/bash
 shopt -s dotglob
 
+mkdir -p .vim/tmp
+
 wd=$(pwd)
 for file in *; do 
 	if ! [[ "$file" =~ ^(link.sh|.git)$ ]]; then
